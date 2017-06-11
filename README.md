@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/hal1437/ToDoLists.svg?branch=master)](https://travis-ci.org/hal1437/ToDoLists)
+
+
 # 概要
 ToDoListsはToDoリストを管理できるWebアプリケーションです。  
 ブラウザからアクセスでき、あなたのやるべきことのリストを作成できます。
@@ -23,7 +26,7 @@ docker-compose build
 
 3. Dockerコンテナを起動します。
 ```
-docker-composeup 
+docker-compose up 
 ```
 
 4. ブラウザの[localhost](http://localhost/)にアクセスすることで、ToDoListsを利用できます。
