@@ -18,12 +18,12 @@ cd ToDoLists/
 
 2. Dockerファイルをビルドします。（**非常に時間がかかります。**）
 ```
-docker build . -t todo
+docker-compose build
 ```
 
-3. Dockerコンテナのポート80番とホストのポート80番をポートフォワードします。
+3. Dockerコンテナを起動します。
 ```
-docker run -d -p 80:80 todo httpd -DFOREGROUND 
+docker-composeup 
 ```
 
 4. ブラウザの[localhost](http://localhost/)にアクセスすることで、ToDoListsを利用できます。
