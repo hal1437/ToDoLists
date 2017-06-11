@@ -1,0 +1,25 @@
+version: '2'
+services:
+    server:
+        build: ./
+        command: bin/cake server -H 0.0.0.0
+        container_name: ToDoLists
+        ports:
+            - "80:8765"
+        volumes:
+                - .:/code
+        depends_on:
+                - mysql
+
+    mysql:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: my_app
+            MYSQL_USER: my_app
+            MYSQL_PASSWORD: secret
+        ports:
+            - "3306:3306"
+        container_name: mysql
+
+
