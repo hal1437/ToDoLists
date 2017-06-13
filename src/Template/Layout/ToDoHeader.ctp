@@ -2,16 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Starter Template for Bootstrap</title>
-
+		<title><?= $title?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/index.css" rel="stylesheet">
 	</head>
 
 	<body>
 		<nav class="navbar navbar-inverse">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand">Bootstrap3の使い方</a>
+				<a href="/" class="navbar-brand">ToDoLists</a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
 					<span class="glyphicon glyphicon-search"></span>
 				</button>
@@ -30,7 +28,7 @@
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
 
