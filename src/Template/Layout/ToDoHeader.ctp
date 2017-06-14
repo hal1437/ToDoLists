@@ -18,7 +18,7 @@
 			
 			<div id="gnavi" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="">検索</a></li>
+					<li><a href="/home/search">検索</a></li>
 				</ul>
 			</div>
 		</nav>	

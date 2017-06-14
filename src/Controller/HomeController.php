@@ -14,6 +14,11 @@ class HomeController extends AppController
 		$this->viewBuilder()->layout('ToDoHeader');
 		$this->set('title','ToDoLists - Detail');
     }
+    public function search(){
+		$this->viewBuilder()->layout('ToDoHeader');
+		$this->set('title','ToDoLists - Search');
+    }
+
 
 }
 
