@@ -4,6 +4,13 @@
 		<meta charset="utf-8">
 		<title><?= $title?></title>
 		<?= $this->Html->css('bootstrap.min.css');?>
+		<?= $this->Html->css('bootstrap-datepicker.min.css');?>
+
+		<!-- スクリプト -->
+		<?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js') ?>
+		<?= $this->Html->script('bootstrap.min.js') ?>
+		<?= $this->Html->script('bootstrap-datepicker.min.js') ?>
+		<?= $this->Html->script('datepicker.js');?>
 	</head>
 
 	<body>
@@ -26,9 +33,7 @@
 		<!-- 本文 -->
 		<?= $this->fetch('content'); ?>
 
-		<!-- スクリプト -->
-		<?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js') ?>
-		<?= $this->Html->script('bootstrap.min.js') ?>
+
 	</body>
 </html>
 
