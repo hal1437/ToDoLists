@@ -10,6 +10,10 @@ class HomeController extends AppController
 		$this->viewBuilder()->layout('ToDoHeader');
 		$this->set('title','ToDoLists - TopPage');
     }
+    public function detail(){
+		$this->viewBuilder()->layout('ToDoHeader');
+		$this->set('title','ToDoLists - Detail');
+    }
 
 }
 

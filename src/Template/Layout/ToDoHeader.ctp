@@ -3,13 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title><?= $title?></title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<?= $this->Html->css('bootstrap.min.css');?>
 	</head>
 
 	<body>
+		<!-- ナビゲーションバー -->
 		<nav class="navbar navbar-inverse">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand">ToDoLists</a>
+				<a href="/home" class="navbar-brand">ToDoLists</a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
 					<span class="glyphicon glyphicon-search"></span>
 				</button>
@@ -22,13 +23,12 @@
 			</div>
 		</nav>	
 
-		<?php echo $this->fetch('content'); ?>
+		<!-- 本文 -->
+		<?= $this->fetch('content'); ?>
 
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<!-- スクリプト -->
+		<?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js') ?>
+		<?= $this->Html->script('bootstrap.min.js') ?>
 	</body>
 </html>
 
