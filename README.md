@@ -31,3 +31,6 @@ docker-compose up
 
 4. ブラウザの[localhost](http://localhost/)にアクセスすることで、ToDoListsを利用できます。
 
+---
+日付設定:[bootstrap-datepicker](https://github.com/uxsolutions/bootstrap-datepicker)
+
