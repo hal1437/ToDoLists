@@ -4,12 +4,12 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;//テーブル使用
 
-
 class HomeController extends AppController
 {
-	
-	public function index(){
+	public function initialize(){
 		$this->viewBuilder()->layout('ToDoHeader');
+	}
+	public function index(){
 		$this->set('title','ToDoLists - TopPage');
 
 		//モデルからリストを抽出
@@ -17,15 +17,6 @@ class HomeController extends AppController
 		$this->set('query',$model->find());
 	}
 
-	public function detail(){
-		$this->viewBuilder()->layout('ToDoHeader');
-		$this->set('title','ToDoLists - Detail');
-	}
-
-	public function search(){
-		$this->viewBuilder()->layout('ToDoHeader');
-		$this->set('title','ToDoLists - Search');
-	}
 	public function all(){
 		$this->autoRender = false;
 
