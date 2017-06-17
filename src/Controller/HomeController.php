@@ -11,6 +11,10 @@ class HomeController extends AppController
 	public function index(){
 		$this->viewBuilder()->layout('ToDoHeader');
 		$this->set('title','ToDoLists - TopPage');
+
+		//モデルからリストを抽出
+		$model = TableRegistry::get('ToDoLists');
+		$this->set('query',$model->find());
 	}
 
 	public function detail(){

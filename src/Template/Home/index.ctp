@@ -20,7 +20,13 @@
 		</div>
 	</div>
 
-	<?= $this->element('ToDoList',['list_name'=>'sample_list','todo_num'=>10,'comp_num'=>5]); ?>
+	<!--ToDoリストの表示-->
+	<?php foreach($query as $row):?>
+		<?= $this->element('ToDoList',['list_name'=>$row->getName(),
+										'todo_num'=>$row->getToDoCount(),
+										'comp_num'=>$row->getCompToDoCount()]); ?>
+	<?php endforeach?>
+
 	<?= $this->Html->script('datepicker.js');?>
 </div>
 
