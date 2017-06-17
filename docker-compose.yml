@@ -23,5 +23,6 @@ services:
         container_name: mysql
         volumes:
             - ./docker/DBinit:/docker-entrypoint-initdb.d
+            - ./docker/mysql_conf.cnf:/etc/mysql/conf.d/mysql_conf.cnf
 
 
