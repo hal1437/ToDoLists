@@ -4,6 +4,6 @@ use Cake\ORM\Table;
 
 class ToDosTable extends Table {
 	public function initialize(array $config){
-		$this->table('todo');
+		$this->table('to_dos');
 	}
 }
