@@ -12,10 +12,6 @@
 				<label for="formGroupExampleInput">ToDoList名</label>
 				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="New ToDoList">
 			</div>
-			<div class="form-group">
-				<label for="mydate">日付</label>
-				<input type="text" class="form-control datepicker" id="mydate">
-			</div>
 			<button type="submit" class="btn btn-primary">作成</button>
 		</div>
 	</div>
