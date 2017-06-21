@@ -1,8 +1,8 @@
 
 use my_app;
-create table to_do_lists(list_id integer primary key,
+create table to_do_lists(list_id INTEGER PRIMARY KEY AUTO_INCREMENT,
                          name text);
-create table to_dos(todo_id int primary key ,
+create table to_dos(todo_id INTEGER PRIMARY KEY AUTO_INCREMENT,
                   list_id int,
                   text text,
                   lim date,

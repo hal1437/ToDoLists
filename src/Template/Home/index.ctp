@@ -9,10 +9,10 @@
 		</div>
 		<div class="panel-body">
 			<div class="form-group">
-				<label for="formGroupExampleInput">ToDoList名</label>
-				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="New ToDoList">
+				<label for="ListName">ToDoList名</label>
+				<input type="text" class="form-control" id="ListName" placeholder="New ToDoList">
+				<button class="btn btn-primary" onclick="CreateToDoList()">作成</button>
 			</div>
-			<button type="submit" class="btn btn-primary">作成</button>
 		</div>
 	</div>
 
@@ -24,5 +24,6 @@
 	<?php endforeach?>
 
 	<?= $this->Html->script('datepicker.js');?>
+	<?= $this->Html->script('AccessAPI.js');?>
 </div>
 
