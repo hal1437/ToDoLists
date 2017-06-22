@@ -13,7 +13,7 @@ class DetailController extends AppController
 		$model = TableRegistry::get('ToDoLists');
 		$query = $model->find('all',[
 			'conditions' =>[
-				'name' => $this->request->query['list']
+				'list_id' => $this->request->query['list']
 			]
 		]);
 		foreach($query as $row){

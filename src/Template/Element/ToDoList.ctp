@@ -1,6 +1,6 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<a class="panel-title" href="/detail?list=<?= $list_name?>">
+		<a class="panel-title" href="/detail?list=<?= $list_id?>">
 			<?= $list_name?>
 		</a>
 	</div>
