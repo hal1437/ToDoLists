@@ -15,7 +15,6 @@ class APIController extends AppController
 	}
 	public function createToDoList(){
 		$this->autoRender = false;
-// 		$set_name = "sample";
 		if($this->request->is('ajax')){
 			$set_name = h($this->request->getData('name'));
 			if($set_name == ""){
@@ -30,5 +29,27 @@ class APIController extends AppController
 			echo "このAPIはajaxでのみ許可されます。";
 		}
 	}
+	public function createToDo(){
+		$this->autoRender = false;
+		if($this->request->is('ajax')){
+			if(h($this->request->getData('text')) == ""){
+				echo "ToDo名が空です";
+			}
+			$list = TableRegistry::get('ToDos');
+			$entity = $list->newEntity(); //エンティティ作成
+
+			$entity->list_id = h($this->request->getData('todo_id'));
+			$entity->text    = h($this->request->getData('text'));
+			$entity->lim     = h($this->request->getData('date'));
+			$entity->comp    = false;
+
+			$list->save($entity);
+			echo "新しいToDo「".$entity->text."」を作成しました。";
+			echo "期限は".$entity->lim."までです。";
+		}else{
+			echo "このAPIはajaxでのみ許可されます。";
+		}
+	}
+
 }
 
