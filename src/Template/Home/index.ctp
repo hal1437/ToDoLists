@@ -10,7 +10,7 @@
 		<div class="panel-body">
 			<div class="form-group">
 				<label for="ListName">ToDoList名</label>
-				<input type="text" class="form-control" id="ListName" placeholder="New ToDoList">
+				<input type="text" class="form-control" id="ListName" placeholder="例.学校のレポート">
 				<button class="btn btn-primary" onclick="CreateToDoList()">作成</button>
 			</div>
 		</div>
@@ -24,7 +24,6 @@
 									'comp_num' =>$row->getCompToDoCount()]); ?>
 	<?php endforeach?>
 
-	<?= $this->Html->script('datepicker.js');?>
 	<?= $this->Html->script('AccessAPI.js');?>
 </div>
 

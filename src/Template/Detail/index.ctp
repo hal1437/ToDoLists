@@ -11,11 +11,11 @@
 		<div class="panel-body">
 			<div class="form-group">
 				<label for="formGroupExampleInput">ToDo名</label>
-				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="New ToDo">
+				<input type="text" class="form-control" id="formGroupExampleInput" placeholder="例.数学のレポート">
 			</div>
 			<div class="form-group">
 				<label for="mydate">締め切り日付</label>
-				<input type="text" class="form-control datepicker" id="mydate">
+				<input type="text" class="form-control datepicker" id="mydate" placeholder="日付を選択">
 			</div>
 			<button type="submit" class="btn btn-primary">作成</button>
 		</div>
@@ -24,6 +24,7 @@
 	<?php foreach($query as $row):?>
 		<?= $this->element('ToDo',['todo_text'=>$row->getText()]); ?>
 	<?php endforeach?>
-	
+
+	<?= $this->Html->script('datepicker.js');?>
 </div>
 
