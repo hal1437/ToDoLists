@@ -15,6 +15,7 @@ function CreateToDoList(){
 			console.log(data);
         }
     });
+	location.reload();
 }
 
 function CreateToDo(){
@@ -43,4 +44,5 @@ function CreateToDo(){
 			console.log(data);
         }
     });
+	location.reload();
 }

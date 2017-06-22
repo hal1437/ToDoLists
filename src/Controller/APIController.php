@@ -15,14 +15,19 @@ class APIController extends AppController
 	}
 	public function createToDoList(){
 		$this->autoRender = false;
+		$list = TableRegistry::get('ToDoLists');
 		if($this->request->is('ajax')){
-			$set_name = h($this->request->getData('name'));
-			if($set_name == ""){
+			$new_name = h($this->request->getData('name'));
+			if($new_name == ""){
 				echo "リスト名が空です";
 			}
-			$list = TableRegistry::get('ToDoLists');
+			//重複
+			if($list->existToDoList($new_name)){
+				echo "既に存在するToDoList「". $new_name."」は作成できません。";
+				return;
+			}
 			$entity = $list->newEntity(); //エンティティ作成
-			$entity->setName($set_name);
+			$entity->setName($new_name);
 			$list->save($entity);
 			echo "新しいToDoList「".$entity->name."」を作成しました";   //echoでもOK
 		}else{
@@ -31,18 +36,24 @@ class APIController extends AppController
 	}
 	public function createToDo(){
 		$this->autoRender = false;
+		$list = TableRegistry::get('ToDos');
 		if($this->request->is('ajax')){
+			//ToDo名が空
 			if(h($this->request->getData('text')) == ""){
 				echo "ToDo名が空です";
+				return;
 			}
-			$list = TableRegistry::get('ToDos');
-			$entity = $list->newEntity(); //エンティティ作成
-
+			//重複
+			if($list->existToDo(h($this->request->getData('text')))){
+				echo "既に存在するToDo「". h($this->request->getData('text'))."」は作成できません。";
+				return;
+			}
+			//エンティティ追加
+			$entity = $list->newEntity(); 
 			$entity->list_id = h($this->request->getData('todo_id'));
 			$entity->text    = h($this->request->getData('text'));
 			$entity->lim     = h($this->request->getData('date'));
 			$entity->comp    = false;
-
 			$list->save($entity);
 			echo "新しいToDo「".$entity->text."」を作成しました。";
 			echo "期限は".$entity->lim."までです。";

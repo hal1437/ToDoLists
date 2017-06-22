@@ -14,20 +14,12 @@ class ToDoList extends Entity {
 	//ToDoの数を取得
 	public function getToDoCount(){
 		$todo = TableRegistry::get('ToDos');
-		return $todo->find('all',[
-			'conditions' => ['list_id' => $this->getID()]
-		])->count();
+		return $todo->getToDoCount($this->getID());
 	}
 	//完了したToDoの数を取得
 	public function getCompToDoCount(){
-		$todo = TableRegistry::get('ToDos');
-		return $todo->find('all',[
-			'conditions' => [
-				'and'=>['list_id' => $this->getID(),
-						'comp'    => true
-				]
-			]
-		 ])->count();
+		$todos = TableRegistry::get('ToDos');
+		return $todos->getCompleteToDoCount($this->getID());
 	}
 
 	public function setName($name){
