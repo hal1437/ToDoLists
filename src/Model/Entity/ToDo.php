@@ -13,6 +13,9 @@ class ToDo extends Entity {
 		return $this->text;
 	}
 	public function getDate() {
-		return $this->date;
+		return $this->lim;
+	}
+	public function isComplete() {
+		return $this->comp;
 	}
 }
