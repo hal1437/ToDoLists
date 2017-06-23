@@ -28,13 +28,13 @@ class SearchController extends AppController
 		//リストの検索
 		$list_query = $lists->find('all',[
 			'conditions' => [
-				'name LIKE' => $key_word
+				'name LIKE' => '%'.$key_word.'%'
 			]
 		]);
 		//todoの検索
 		$todo_query = $todos->find('all',[
 			'conditions' => [
-				'text LIKE' => $key_word
+				'text LIKE' => '%'.$key_word.'%'
 			]
 		]);
 		$this->set('list_query',$list_query);
