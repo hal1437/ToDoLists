@@ -20,6 +20,7 @@ class APIController extends AppController
 			$new_name = h($this->request->getData('name'));
 			if($new_name == ""){
 				echo "リスト名が空です";
+				return ;
 			}
 			//重複
 			if($list->existToDoList($new_name)){
