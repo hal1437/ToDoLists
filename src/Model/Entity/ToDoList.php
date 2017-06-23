@@ -10,6 +10,9 @@ class ToDoList extends Entity {
 	public function getName() {
 		return $this->name;
 	}
+	public function getDate() {
+		return $this->made;
+	}
 
 	//ToDoの数を取得
 	public function getToDoCount(){
@@ -21,7 +24,6 @@ class ToDoList extends Entity {
 		$todos = TableRegistry::get('ToDos');
 		return $todos->getCompleteToDoCount($this->getID());
 	}
-
 	public function setName($name){
 		$this->name = $name;
 	}

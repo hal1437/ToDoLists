@@ -6,6 +6,7 @@
 	</div>
 	<div class="panel-body">
 		<?= $item->getToDoCount() ?>個のうち<?= $item->getCompToDoCount() ?>個がチェック済み。<br>
+		作成日時：<?= $item->getDate()->format('Y年m月d日') ?>
 		
 	</div>
 </div>

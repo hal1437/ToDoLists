@@ -30,7 +30,7 @@ class SearchController extends AppController
 			'conditions' => [
 				'name LIKE' => '%'.$key_word.'%'
 			]
-		]);
+		])->order(['made' => 'DESC']);
 		//todoの検索
 		$todo_query = $todos->find('all',[
 			'conditions' => [
