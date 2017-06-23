@@ -3,6 +3,14 @@
 		<h1>検索</h1>
 		<p class="lead"><?= $title?></p>
 	</div>
+
+	<form action="/search" method="get" class="input-group">
+		<input id="SearchWord" type="text" name="word" class="form-control" value="<?= $key_word ?>">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit">検索</button>
+		</span>
+	</form>
+
 	<!--ToDoリストの表示-->
 	<h1>検索キーワード"<?= $key_word ?>"</h3>
 	<h3><?= $list_query->count() ?>件のリスト</h3>
