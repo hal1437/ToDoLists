@@ -22,9 +22,7 @@
 	</div>
 
 	<?php foreach($query as $row):?>
-		<?= $this->element('ToDo',['todo_text'=>$row->getText(),
-									'todo_lim'=>$row->getDate(),
-									'todo_comp'=>$row->isComplete()]); ?>
+		<?= $this->element('ToDo',['item'=>$row]); ?>
 	<?php endforeach?>
 
 	<?= $this->Html->script('datepicker.js');?>

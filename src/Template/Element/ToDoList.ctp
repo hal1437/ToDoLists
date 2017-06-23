@@ -1,11 +1,11 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<a class="panel-title" href="/detail?list=<?= $list_id?>">
-			<?= $list_name?>
+		<a class="panel-title" href="/detail?list=<?= $item->getID()?>">
+			<?= $item->getName()?>
 		</a>
 	</div>
 	<div class="panel-body">
-		<?= $todo_num ?>個のうち<?= $comp_num ?>個がチェック済み。<br>
+		<?= $item->getToDoCount() ?>個のうち<?= $item->getCompToDoCount() ?>個がチェック済み。<br>
 		
 	</div>
 </div>

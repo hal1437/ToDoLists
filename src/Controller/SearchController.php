@@ -11,8 +11,13 @@ class SearchController extends AppController
 	}
 	public function index(){
 		$this->set('title','ToDoLists - Search');
-// 		$this->Search($this->request->query('page'));
-		$this->Search("レポート");
+
+		$key_word = h($this->request->query('word'));
+		$this->set('key_word',$key_word);
+		if($key_word==''){
+			$key_word = "レポート";
+		}
+		$this->Search($key_word);
 	}
 
 	//検索

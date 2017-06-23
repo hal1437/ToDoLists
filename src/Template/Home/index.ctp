@@ -18,10 +18,7 @@
 
 	<!--ToDoリストの表示-->
 	<?php foreach($query as $row):?>
-	<?= $this->element('ToDoList',[ 'list_id'  =>$row->getID(),
-									'list_name'=>$row->getName(),
-									'todo_num' =>$row->getToDoCount(),
-									'comp_num' =>$row->getCompToDoCount()]); ?>
+	<?= $this->element('ToDoList',[ 'item'=>$row]); ?>
 	<?php endforeach?>
 
 	<?= $this->Html->script('AccessAPI.js');?>
