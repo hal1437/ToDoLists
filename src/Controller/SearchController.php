@@ -36,7 +36,7 @@ class SearchController extends AppController
 			'conditions' => [
 				'text LIKE' => '%'.$key_word.'%'
 			]
-		]);
+		])->order(['made' => 'DESC']);
 		$this->set('list_query',$list_query);
 		$this->set('todo_query',$todo_query);
 	}

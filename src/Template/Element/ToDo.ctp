@@ -6,7 +6,7 @@
 			<button class="btn btn-warning pull-right">未完了</button>
 		<?php endif; ?>
 		<?= $item->getText() ?><br>
-		作成日：<?= $item->getDate()?><br>
-		期限　：<?= $item->getLimit()?>
+		作成日：<?= $item->getDate()->format('Y年m月d日')?><br>
+		期限　：<?= $item->getLimit()->format('Y年m月d日')?>
 	</div>
 </div>
