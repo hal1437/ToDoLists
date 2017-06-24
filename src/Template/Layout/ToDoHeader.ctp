@@ -19,7 +19,9 @@
 			<div class="navbar-header">
 				<a href="/home" class="navbar-brand">ToDoLists</a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
-					<span class="glyphicon glyphicon-search"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
 			</div>
 			
