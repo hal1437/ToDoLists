@@ -22,6 +22,11 @@ class APIController extends AppController
 				echo "リスト名が空です";
 				return ;
 			}
+			if(mb_strlen($new_name)>=31){
+				echo "ToDo名の最大文字数は30文字です。";
+				return;
+			}
+
 			//重複
 			if($list->existToDoList($new_name)){
 				echo "既に存在するToDoList「". $new_name."」は作成できません。";
@@ -41,7 +46,11 @@ class APIController extends AppController
 		if($this->request->is('ajax')){
 			//ToDo名が空
 			if(h($this->request->getData('text')) == ""){
-				echo "ToDo名が空です";
+				echo "ToDo名が空です。";
+				return;
+			}
+			if(mb_strlen(h($this->request->getData('text')))>=31){
+				echo "ToDo名の最大文字数は30文字です。";
 				return;
 			}
 			//重複
