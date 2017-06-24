@@ -22,5 +22,6 @@
 			<?= $this->element('ToDo',['item'=>$row]); ?>
 		<?php endforeach?>
 	<?php endif;?>
+	<?= $this->Html->script('AccessAPI.js');?>
 </div>
 

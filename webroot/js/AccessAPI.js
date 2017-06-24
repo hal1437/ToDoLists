@@ -1,20 +1,20 @@
 
 function CreateToDoList(){
 	$.ajax({
-        url: "/API/CreateToDoList",
-        type: "POST",
-        data: { name : $("#ListName").val() },
-        dataType: "text",
-        success : function(response){
-            //通信成功時の処理
-            alert(response);
-        },
-        error: function(data){
-            //通信失敗時の処理
-            alert('通信失敗');
+		url: "/API/CreateToDoList",
+		type: "POST",
+		data: { name : $("#ListName").val() },
+		dataType: "text",
+		success : function(response){
+			//通信成功時の処理
+			alert(response);
+		},
+		error: function(data){
+			//通信失敗時の処理
+			alert('通信失敗');
 			console.log(data);
-        }
-    });
+		}
+	});
 	location.reload();
 }
 
@@ -25,24 +25,41 @@ function CreateToDo(){
 	spparams   = params[1].split("&")[0].split("=");
 	
 	$.ajax({
-        url: "/API/CreateToDo",
-        type: "POST",
-        data: {
+		url: "/API/CreateToDo",
+		type: "POST",
+		data: {
 			text    : $("#ToDoText").val(), 
 			todo_id : spparams[1],
 			date    : $("#ToDoDate").val() 
 
 		},
-        dataType: "text",
-        success : function(response){
-            //通信成功時の処理
-            alert(response);
-        },
-        error: function(data){
-            //通信失敗時の処理
-            alert('通信失敗');
+		dataType: "text",
+		success : function(response){
+			//通信成功時の処理
+			alert(response);
+			location.reload();
+		},
+		error: function(data){
+			//通信失敗時の処理
+			alert('通信失敗');
 			console.log(data);
-        }
-    });
+		}
+	});
 	location.reload();
+}
+function ToggleToDo(index){
+	$.ajax({
+		url: "/API/ToggleCheck",
+		type: "POST",
+		data: { id : index },
+		dataType: "text",
+		success : function(response){
+			location.reload();
+		},
+		error: function(data){
+			//通信失敗時の処理
+			alert('通信失敗');
+			console.log(data);
+		}
+	});
 }

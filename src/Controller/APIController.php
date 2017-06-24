@@ -49,15 +49,35 @@ class APIController extends AppController
 				echo "既に存在するToDo「". h($this->request->getData('text'))."」は作成できません。";
 				return;
 			}
+			//日付フォーマットチェック
+			$datetime = h($this->request->getData('date'));
+			if($datetime == ""){
+				echo "締め切り日が選択されていません。";
+				return;
+			}
 			//エンティティ追加
 			$entity = $list->newEntity(); 
 			$entity->list_id = h($this->request->getData('todo_id'));
 			$entity->text    = h($this->request->getData('text'));
-			$entity->lim     = h($this->request->getData('date'));
+			$entity->lim     = $datetime;
 			$entity->comp    = false;
 			$list->save($entity);
 			echo "新しいToDo「".$entity->text."」を作成しました。";
 			echo "期限は".$entity->lim."までです。";
+		}else{
+			echo "このAPIはajaxでのみ許可されます。";
+		}
+	}
+	public function ToggleCheck(){
+		$this->autoRender = false;
+		if($this->request->is('ajax')){
+			$id = $this->request->getData('id');
+			$todos = TableRegistry::get('ToDos');
+			$obj = $todos->get($id);
+
+			$obj->comp = !$obj->comp;//反転
+			$todos->save($obj);
+			echo "反転";
 		}else{
 			echo "このAPIはajaxでのみ許可されます。";
 		}
