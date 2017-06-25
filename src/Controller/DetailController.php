@@ -9,7 +9,7 @@ class DetailController extends AppController
 	public function initialize(){
 		$this->viewBuilder()->layout('ToDoHeader');
 	}
-	public function getListID(){
+	public function getList(){
 		$model = TableRegistry::get('ToDoLists');
 		$query = $model->find('all',[
 			'conditions' =>[
@@ -17,15 +17,18 @@ class DetailController extends AppController
 			]
 		]);
 		foreach($query as $row){
-			return $row->getID();
+			return $row;
 		}
-		return 0;
+	}
+	public function getListID(){
+		return $this->getList()->getID();
 	}
 	public function index(){
 		$this->set('title','ToDoLists - Detail');
 
 		//モデルからリストを抽出
 		$model = TableRegistry::get('ToDos');
+		$this->set('list',$this->getList());
 		$this->set('query',$model->find('all',[
 			'conditions' =>[
 				'list_id' => $this->getListID()

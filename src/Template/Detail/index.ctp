@@ -1,6 +1,6 @@
 <div class="container">
 	<div>
-		<h1>リスト詳細画面</h1>
+		<h1><?= $list->getName() ?></h1>
 		<p class="lead"><?= $title?></p>
 	</div>
 
@@ -21,9 +21,14 @@
 		</div>
 	</div>
 
-	<?php foreach($query as $row):?>
-		<?= $this->element('ToDo',['item'=>$row]); ?>
-	<?php endforeach?>
+	<?php if($list->getToDoCount()>0): ?>
+		<?php foreach($query as $row):?>
+			<?= $this->element('ToDo',['item'=>$row]); ?>
+		<?php endforeach?>
+	<?php else: ?>
+		ToDoがありません。
+	<?php endif; ?>
+	
 
 	<?= $this->Html->script('datepicker.js');?>
 	<?= $this->Html->script('AccessAPI.js');?>

@@ -54,7 +54,7 @@ class APIController extends AppController
 				return;
 			}
 			//重複
-			if($list->existToDo(h($this->request->getData('text')))){
+			if($list->existToDo($this->request->getData('todo_id'),h($this->request->getData('text')))){
 				echo "既に存在するToDo「". h($this->request->getData('text'))."」は作成できません。";
 				return;
 			}

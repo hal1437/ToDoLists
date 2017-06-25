@@ -22,20 +22,14 @@ class ToDosTable extends Table {
 			'conditions' => ['list_id' => $list_id]
 		])->count();
 	}
-	//リストの存在確認
-	public function exist($text){
-		return $this->find('all',[
-			'conditions' => [
-				'name' => $list_name
-			]
-		 ])->count() > 1;
-	}
 	//ToDoの存在確認
-	public function existToDo($text){
+	public function existToDo($list_id,$text){
 		return $this->find('all',[
 			'conditions' => [
-				'text' => $text
+				'and'=>['list_id' => $list_id,
+						'text' => $text
+				]
 			]
-		])->count()>1;
+		])->count()>0;
 	}
 }
