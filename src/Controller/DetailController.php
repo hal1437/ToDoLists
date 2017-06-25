@@ -28,12 +28,15 @@ class DetailController extends AppController
 
 		//モデルからリストを抽出
 		$model = TableRegistry::get('ToDos');
-		$this->set('list',$this->getList());
-		$this->set('query',$model->find('all',[
-			'conditions' =>[
-				'list_id' => $this->getListID()
-			]
-		]));
+		$list = $this->getList();
+		$this->set('list'   ,$list);
+		if($list != null){
+			$this->set('query',$model->find('all',[
+				'conditions' =>[
+					'list_id' => $this->getListID()
+				]
+			]));
+		}
 	}
 }
 

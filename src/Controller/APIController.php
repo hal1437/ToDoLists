@@ -72,10 +72,24 @@ class APIController extends AppController
 			$entity->comp    = false;
 			$list->save($entity);
 			echo "新しいToDo「".$entity->text."」を作成しました。";
-			echo "期限は".$entity->lim."までです。";
+			echo "期限は".$entity->getLimit()."までです。";
 		}else{
 			echo "このAPIはajaxでのみ許可されます。";
 		}
+	}
+	public function RemoveList(){
+		$this->autoRender = false;
+		$list = TableRegistry::get('ToDoLists');
+		$obj = $list->get(h($this->request->getData('id')));
+		$list->delete($obj);
+		echo "削除";
+	}
+	public function RemoveToDo(){
+		$this->autoRender = false;
+		$list = TableRegistry::get('ToDos');
+		$obj = $list->get(h($this->request->getData('id')));
+		$list->delete($obj);
+		echo "削除";
 	}
 	public function ToggleCheck(){
 		$this->autoRender = false;
