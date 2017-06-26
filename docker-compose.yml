@@ -2,7 +2,7 @@ version: '2'
 services:
     server:
         build: ./
-        command: bin/cake server -H 0.0.0.0
+        command: bash -c "composer install && bin/cake server -H 0.0.0.0"
         container_name: ToDoLists
         ports:
             - "80:8765"
