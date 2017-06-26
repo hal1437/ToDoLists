@@ -34,23 +34,25 @@ DockerComposeによって、サーバーとデータベースのイメージが�
 
 # 3. インストール方法
 
-1. リポジトリをダウンロードし、ディレクトリを移動します。
+#### 1. リポジトリをダウンロードし、ディレクトリを移動します。
 ```
 git clone https://github.com/hal1437/ToDoLists/
 cd ToDoLists/
 ```
 
-2. Dockerファイルをビルドします。（**非常に時間がかかります。**）
+#### 2. Dockerファイルをビルドします。（**非常に時間がかかります。**）
 ```
 docker-compose build
 ```
 
-3. Dockerコンテナを起動します。
+#### 3. Dockerコンテナを起動します。
 ```
 docker-compose up 
 ```
+初回起動時、cakePHPの起動に必要なファイルをcomposerを使ってダウンロードするため、時間がかかります。
 
-4. ブラウザの[localhost](http://localhost/)にアクセスすることで、ToDoListsを利用できます。
+
+#### 4. ブラウザの[localhost](http://localhost/)にアクセスすることで、ToDoListsを利用できます。
 
 # 4. 使用したライブラリ
 デザイン：[bootstrap](http://getbootstrap.com/)  
