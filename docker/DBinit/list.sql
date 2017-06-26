@@ -14,14 +14,14 @@ create table to_dos(
 	comp boolean default false
 );
 insert into to_do_lists(name) values("チュートリアル");
-insert into to_do_lists(name) values("日付テスト");
-insert into to_dos(list_id,text) values(1,"新しいToDoを追加してみましょう。1");
-insert into to_dos(list_id,text) values(1,"新しいToDoを追加してみましょう。2");
-insert into to_dos(list_id,text) values(1,"新しいToDoを追加してみましょう。3");
-insert into to_dos(list_id,text) values(1,"新しいToDoを追加してみましょう。4");
-insert into to_dos(list_id,text,made) values(2,"日付テスト1","2017-06-23");
-insert into to_dos(list_id,text,made) values(2,"日付テスト2","2017-06-14");
-insert into to_dos(list_id,text,made) values(2,"日付テスト3","2017-06-20");
-insert into to_dos(list_id,text,made) values(2,"日付テスト4","2017-06-01");
-insert into to_dos(list_id,text,made) values(2,"日付テスト5","2017-06-19");
+insert into to_do_lists(name) values("レポート");
+insert into to_dos(list_id,text) values(1,"新しいリストを追加してみましょう。");
+insert into to_dos(list_id,text) values(1,"新しいToDoを追加してみましょう。");
+insert into to_dos(list_id,text) values(1,"ToDoを完了してみましょう。");
+insert into to_dos(list_id,text) values(1,"ToDoを削除してみましょう。");
+insert into to_dos(list_id,text,made,lim) values(2,"国語のレポート","2017-06-05","2017-07-02");
+insert into to_dos(list_id,text,made,lim) values(2,"数学のレポート","2017-06-03","2017-07-01");
+insert into to_dos(list_id,text,made,lim) values(2,"英語のレポート","2017-06-04","2017-07-05");
+insert into to_dos(list_id,text,made,lim) values(2,"物理のレポート","2017-06-01","2017-07-03");
+insert into to_dos(list_id,text,made,lim) values(2,"生物のレポート","2017-06-02","2017-07-04");
 
