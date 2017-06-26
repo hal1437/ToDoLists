@@ -15,7 +15,7 @@ class DetailController extends AppController
 			'conditions' =>[
 				'list_id' => $this->request->query['list']
 			]
-		]);
+		])->order(['made' => 'DESC']);
 		foreach($query as $row){
 			return $row;
 		}
@@ -35,7 +35,7 @@ class DetailController extends AppController
 				'conditions' =>[
 					'list_id' => $this->getListID()
 				]
-			]));
+			])->order(['made' => 'DESC']));
 		}
 	}
 }

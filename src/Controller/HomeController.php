@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;//テーブル使用
+use Cake\Cache\Cache;
 
 class HomeController extends AppController
 {
@@ -10,6 +11,7 @@ class HomeController extends AppController
 		$this->viewBuilder()->layout('ToDoHeader');
 	}
 	public function index(){
+		Cache::disable();
 		$this->set('title','ToDoLists - TopPage');
 
 		//モデルからリストを抽出
