@@ -36,7 +36,7 @@ DockerComposeによって、サーバーとデータベースのイメージが�
 
 1. リポジトリをダウンロードし、ディレクトリを移動します。
 ```
-git pull https://github.com/hal1437/ToDoLists/
+git clone https://github.com/hal1437/ToDoLists/
 cd ToDoLists/
 ```
 
