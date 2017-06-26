@@ -13,7 +13,10 @@
 		期限　：<?= $item->getLimit()->format('Y年m月d日')?><br>
 		
 		<?php if(isset($parent)):?>
-			リスト：<?= $parent ?><br>
+			リスト：
+			<a href="/detail?list=<?= $item->getListID()?>">
+				<?= $parent ?><br>
+			</a>
 		<?php endif;?>
 	</div>
 </div>

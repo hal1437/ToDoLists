@@ -1,7 +1,9 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<a class="panel-title" href="/detail?list=<?= $item->getID()?>">
-			<?= $item->getName()?>
+			<div class="text-primary">
+				<?= $item->getName()?>
+			</div>
 		</a>
 	</div>
 	<div class="panel-body">
