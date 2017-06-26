@@ -1,7 +1,7 @@
 # ToDoLists
 
 [![Build Status](https://travis-ci.org/hal1437/ToDoLists.svg?branch=master)](https://travis-ci.org/hal1437/ToDoLists)
-![スクリーンショット](https://raw.githubusercontent.com/hal1437/ToDoLists/master/doc/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202017-06-26%2013.07.26.png)
+![スクリーンショット](https://raw.githubusercontent.com/hal1437/ToDoLists/doc/doc/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202017-06-26%2013.07.26.png)
 
 
 ToDoListsはToDoリストを管理できるWebアプリケーションです。  
