@@ -30,7 +30,7 @@ class ToDosTable extends Table {
 						'comp'    => false
 				]
 			]
-		])->order(['lim' => 'DESC']);
+		])->order(['lim' => 'ASC']);
 			
 		return $query->first()->getLimit();
 	}
