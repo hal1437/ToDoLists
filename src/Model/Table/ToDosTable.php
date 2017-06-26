@@ -22,6 +22,18 @@ class ToDosTable extends Table {
 			'conditions' => ['list_id' => $list_id]
 		])->count();
 	}
+	//リスト内のToDo数を取得
+	public function getLimitRecent($list_id){
+		$query = $this->find('all',[
+			'conditions' => [
+				'and'=>['list_id' => $list_id,
+						'comp'    => false
+				]
+			]
+		])->order(['lim' => 'DESC']);
+			
+		return $query->first()->getLimit();
+	}
 	//ToDoの存在確認
 	public function existToDo($list_id,$text){
 		return $this->find('all',[

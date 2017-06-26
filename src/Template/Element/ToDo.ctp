@@ -10,6 +10,10 @@
 		</div>
 		<?= $item->getText() ?><br>
 		作成日：<?= $item->getDate()->format('Y年m月d日')?><br>
-		期限　：<?= $item->getLimit()->format('Y年m月d日')?>
+		期限　：<?= $item->getLimit()->format('Y年m月d日')?><br>
+		
+		<?php if(isset($parent)):?>
+			リスト：<?= $parent ?><br>
+		<?php endif;?>
 	</div>
 </div>

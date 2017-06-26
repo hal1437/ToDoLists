@@ -10,7 +10,13 @@
 		<?php else: ?>
 			<?= $item->getToDoCount() ?>個のうち<?= $item->getCompToDoCount() ?>個がチェック済み。<br>
 		<?php endif;?>
-		作成日時：<?= $item->getDate()->format('Y年m月d日') ?>
+
+		<?php if(isset($made)):?>
+			作成日時：<?= $made->format('Y年m月d日') ?><br>
+		<?php endif;?>
+		<?php if($item->getLimitRecent()!=""):?>
+			締め切り：<?= $item->getLimitRecent()->format('Y年m月d日') ?><br>
+		<?php endif;?>
 		
 	</div>
 </div>

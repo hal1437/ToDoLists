@@ -24,6 +24,14 @@ class ToDoList extends Entity {
 		$todos = TableRegistry::get('ToDos');
 		return $todos->getCompleteToDoCount($this->getID());
 	}
+	//未完了の中でもっとも最近のものを取得
+	public function getLimitRecent(){
+		if($this->getToDoCount() == $this->getCompToDoCount())return "";
+		else{
+			$todos = TableRegistry::get('ToDos');
+			return $todos->getLimitRecent($this->getID());
+		}
+	}
 	public function setName($name){
 		$this->name = $name;
 	}
